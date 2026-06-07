@@ -8,8 +8,8 @@ use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Infolists\Components\TextEntry;
@@ -64,6 +64,11 @@ class ContactResource extends Resource
                 TextInput::make('course')
                     ->label(__('Course'))
                     ->required(),
+                Select::make('pricing_plan_id')
+                    ->label(__('Pricing Plan'))
+                    ->relationship('pricingPlan', 'title')
+                    ->searchable()
+                    ->preload(),
                 Textarea::make('message')
                     ->label(__('Message'))
                     ->required()
@@ -87,6 +92,9 @@ class ContactResource extends Resource
                     ->label(__('Country')),
                 TextEntry::make('course')
                     ->label(__('Course')),
+                TextEntry::make('pricingPlan.title')
+                    ->label(__('Pricing Plan'))
+                    ->placeholder('-'),
                 TextEntry::make('message')
                     ->label(__('Message'))
                     ->columnSpanFull(),
@@ -118,6 +126,10 @@ class ContactResource extends Resource
                 TextColumn::make('course')
                     ->label(__('Course'))
                     ->searchable(),
+                TextColumn::make('pricingPlan.title')
+                    ->label(__('Pricing Plan'))
+                    ->searchable()
+                    ->placeholder('-'),
                 TextColumn::make('created_at')
                     ->label(__('Created At'))
                     ->dateTime()
@@ -129,7 +141,6 @@ class ContactResource extends Resource
             ])
             ->recordActions([
                 ViewAction::make(),
-                // EditAction::make(),
                 DeleteAction::make(),
             ])
             ->toolbarActions([

@@ -19,6 +19,12 @@ class Contact extends Model
         'country',
         'course',
         'course_id',
+        'pricing_plan_id',
         'message',
     ];
+
+    public function pricingPlan()
+    {
+        return $this->belongsTo(PricingPlan::class, 'pricing_plan_id');
+    }
 }

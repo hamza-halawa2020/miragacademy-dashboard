@@ -10,6 +10,7 @@ Email: {{ $contact->email }}
 Age: {{ $contact->age }}
 Country: {{ $contact->country }}
 Interested Course: {{ $contact->course }}
+Pricing Plan: {{ $contact->pricingPlan?->title ?? '-' }}
 Submitted At: {{ $contact->created_at?->toDateTimeString() }}
 
 Message Content:

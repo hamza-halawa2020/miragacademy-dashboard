@@ -30,6 +30,7 @@
                                 <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Age</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->age }}</td></tr>
                                 <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Country</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->country }}</td></tr>
                                 <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Interested Course</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->course }}</td></tr>
+                                <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Pricing Plan</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->pricingPlan?->title ?? '-' }}</td></tr>
                                 <tr><td style="padding:10px 12px; color:#6b7280;">Submitted At</td><td style="padding:10px 12px;">{{ $contact->created_at?->toDateTimeString() }}</td></tr>
                             </table>
 

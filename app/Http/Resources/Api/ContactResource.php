@@ -18,6 +18,8 @@ class ContactResource extends JsonResource
             'country' => $this->country,
             'course' => $this->course,
             'course_id' => $this->course_id,
+            'pricing_plan_id' => $this->pricing_plan_id,
+            'pricing_plan' => $this->pricingPlan?->title,
             'message' => $this->message,
         ];
     }

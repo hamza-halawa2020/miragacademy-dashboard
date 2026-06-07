@@ -23,6 +23,7 @@ class ContactStoreRequest extends FormRequest
             'country' => 'required|string|max:255',
             'course_category_id' => 'required|exists:course_categories,id',
             'course' => 'required|exists:courses,id',
+            'pricing_plan_id' => 'nullable|exists:pricing_plans,id',
             'message' => 'required|string|min:10',
         ];
     }
