@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\SettingController;
 use App\Http\Controllers\Api\CertificateController;
 use App\Http\Controllers\Api\StaffController;
 use App\Http\Controllers\Api\TeacherApplicationController;
+use App\Http\Controllers\Api\PricingPlanController;
 
 Route::get('/settings', [SettingController::class, 'index']);
 
@@ -19,6 +20,7 @@ Route::get('/posts/{id}', [PostController::class, 'show']);
 
 Route::get('/courses', [CourseController::class, 'index']);
 Route::get('/course-categories', [CourseController::class, 'categories']);
+Route::get('/pricing-plans', [PricingPlanController::class, 'index']);
 Route::get('/courses/{id}', [CourseController::class, 'show']);
 
 Route::get('/media-center', [MediaCenterController::class, 'index']);
