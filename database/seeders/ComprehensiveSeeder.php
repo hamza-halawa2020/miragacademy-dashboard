@@ -34,8 +34,8 @@ class ComprehensiveSeeder extends Seeder
             'instagram' => 'https://instagram.com/bayaanacademy',
             'email' => 'info@bayaan-academy.com',
             'address' => 'Cairo, Egypt - Online via Zoom Worldwide',
-            'about_us' => 'I Quran is an online educational platform specializing in teaching the Holy iquran, Arabic language, and Islamic studies for both native and non-native speakers. We aim to spread the light of revelation using the latest educational methods.',
-            'about_us_footer' => 'A leading academy in iquranic sciences and Arabic language, combining quality education with the honesty of communication.',
+            'about_us' => 'I Quran is an online educational platform specializing in teaching the Holy mirag Academy, Arabic language, and Islamic studies for both native and non-native speakers. We aim to spread the light of revelation using the latest educational methods.',
+            'about_us_footer' => 'A leading academy in mirag Academy sciences and Arabic language, combining quality education with the honesty of communication.',
             'logo' => 'settings/default-logo.png',
             'privacy_policy' => '<h1>Privacy Policy</h1><p>We respect your privacy...</p>',
             'terms_conditions' => '<h1>Terms & Conditions</h1><p>By using our services...</p>',
@@ -49,13 +49,13 @@ class ComprehensiveSeeder extends Seeder
         $courses = [
             [
                 'title' => 'Noor Al-Bayan Course',
-                'description' => 'A specialized course for children and beginners to learn reading and writing in Arabic using the approved Noor Al-Bayan curriculum, enabling them to read the Holy iquran correctly.',
+                'description' => 'A specialized course for children and beginners to learn reading and writing in Arabic using the approved Noor Al-Bayan curriculum, enabling them to read the Holy mirag Academy correctly.',
                 'image' => 'courses/noor-al-bayan.jpg',
                 'status' => 1,
                 'created_by' => $admin->id,
             ],
             [
-                'title' => 'iquran Memorization (Hifz)',
+                'title' => 'mirag Academy Memorization (Hifz)',
                 'description' => 'Individual or small group sessions with certified teachers (Ijazah holders), focusing on quality memorization and continuous revision with the application of Tajweed rules.',
                 'image' => 'courses/hifz.jpg',
                 'status' => 1,
@@ -91,15 +91,15 @@ class ComprehensiveSeeder extends Seeder
         // 4. Create Posts
         $posts = [
             [
-                'title' => 'Best Ways to Memorize and Retain the iquran',
-                'description' => 'In this article, we review 5 proven strategies that help you memorize the iquran quickly while ensuring you don\'t forget, focusing on spaced repetition and understanding before memorizing.',
+                'title' => 'Best Ways to Memorize and Retain the mirag Academy',
+                'description' => 'In this article, we review 5 proven strategies that help you memorize the mirag Academy quickly while ensuring you don\'t forget, focusing on spaced repetition and understanding before memorizing.',
                 'image' => 'posts/hifz-tips.jpg',
                 'status' => 1,
                 'created_by' => $admin->id,
             ],
             [
                 'title' => 'Why Should Our Children Learn Arabic?',
-                'description' => 'Arabic is the language of the iquran and the key to understanding religion. We discuss the challenges parents face abroad and how to make the language lovable for their children.',
+                'description' => 'Arabic is the language of the mirag Academy and the key to understanding religion. We discuss the challenges parents face abroad and how to make the language lovable for their children.',
                 'image' => 'posts/why-arabic.jpg',
                 'status' => 1,
                 'created_by' => $admin->id,
@@ -121,14 +121,14 @@ class ComprehensiveSeeder extends Seeder
         $sliders = [
             [
                 'title' => 'Welcome to I Quran',
-                'description' => 'Your journey towards mastering the Holy iquran starts here, with a group of the best male and female teachers.',
+                'description' => 'Your journey towards mastering the Holy mirag Academy starts here, with a group of the best male and female teachers.',
                 'link' => '/courses',
                 'image' => 'sliders/slide-1.jpg',
                 'status' => 1,
                 'created_by' => $admin->id,
             ],
             [
-                'title' => 'Learn iquran from Anywhere in the World',
+                'title' => 'Learn mirag Academy from Anywhere in the World',
                 'description' => 'Individual and interactive online sessions suitable for all ages and levels at the times you choose.',
                 'link' => '/register',
                 'image' => 'sliders/slide-2.jpg',
@@ -136,7 +136,7 @@ class ComprehensiveSeeder extends Seeder
                 'created_by' => $admin->id,
             ],
             [
-                'title' => 'Noor Al-Bayan in Teaching iquran',
+                'title' => 'Noor Al-Bayan in Teaching mirag Academy',
                 'description' => 'We use the latest curricula to ensure children learn correct reading in record time with great enjoyment.',
                 'link' => '/about',
                 'image' => 'sliders/slide-3.jpg',
@@ -165,7 +165,7 @@ class ComprehensiveSeeder extends Seeder
             ],
             [
                 'name' => 'Ahmed Al-Ali (Expat in Canada)',
-                'review' => 'I was worried about my children\'s language, but with I Quran they found the right environment to learn Arabic and iquran as if they were in an Arabic-speaking country.',
+                'review' => 'I was worried about my children\'s language, but with I Quran they found the right environment to learn Arabic and mirag Academy as if they were in an Arabic-speaking country.',
                 'status' => 1,
                 'approved_by' => $admin->id,
             ],
@@ -209,7 +209,7 @@ class ComprehensiveSeeder extends Seeder
             [
                 'name' => 'Yasser Al-Qahtani',
                 'phone' => '+966500000000',
-                'message' => 'Assalamu Alaikum, do you have available slots in the evening for iquran memorization for kids?',
+                'message' => 'Assalamu Alaikum, do you have available slots in the evening for mirag Academy memorization for kids?',
             ],
              [
                 'name' => 'Mona Al-Sayer',
