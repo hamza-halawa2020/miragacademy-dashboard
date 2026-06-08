@@ -21,7 +21,7 @@ class ComprehensiveSeeder extends Seeder
         $admin = User::updateOrCreate(
             ['email' => 'admin@example.com'],
             [
-                'name' => 'I Quran Admin',
+                'name' => 'Mirag Academy Admin',
                 'password' => Hash::make('12345678'),
             ]
         );
@@ -34,7 +34,7 @@ class ComprehensiveSeeder extends Seeder
             'instagram' => 'https://instagram.com/bayaanacademy',
             'email' => 'info@bayaan-academy.com',
             'address' => 'Cairo, Egypt - Online via Zoom Worldwide',
-            'about_us' => 'I Quran is an online educational platform specializing in teaching the Holy mirag Academy, Arabic language, and Islamic studies for both native and non-native speakers. We aim to spread the light of revelation using the latest educational methods.',
+            'about_us' => 'Mirag Academy is an online educational platform specializing in teaching the Holy mirag Academy, Arabic language, and Islamic studies for both native and non-native speakers. We aim to spread the light of revelation using the latest educational methods.',
             'about_us_footer' => 'A leading academy in mirag Academy sciences and Arabic language, combining quality education with the honesty of communication.',
             'logo' => 'settings/default-logo.png',
             'privacy_policy' => '<h1>Privacy Policy</h1><p>We respect your privacy...</p>',
@@ -120,7 +120,7 @@ class ComprehensiveSeeder extends Seeder
         // 5. Create Main Sliders
         $sliders = [
             [
-                'title' => 'Welcome to I Quran',
+                'title' => 'Welcome to Mirag Academy',
                 'description' => 'Your journey towards mastering the Holy mirag Academy starts here, with a group of the best male and female teachers.',
                 'link' => '/courses',
                 'image' => 'sliders/slide-1.jpg',
@@ -165,7 +165,7 @@ class ComprehensiveSeeder extends Seeder
             ],
             [
                 'name' => 'Ahmed Al-Ali (Expat in Canada)',
-                'review' => 'I was worried about my children\'s language, but with I Quran they found the right environment to learn Arabic and mirag Academy as if they were in an Arabic-speaking country.',
+                'review' => 'I was worried about my children\'s language, but with Mirag Academy they found the right environment to learn Arabic and mirag Academy as if they were in an Arabic-speaking country.',
                 'status' => 1,
                 'approved_by' => $admin->id,
             ],
@@ -222,6 +222,6 @@ class ComprehensiveSeeder extends Seeder
             Contact::create($contact);
         }
 
-        echo "All I Quran data has been created successfully in English!\n";
+        echo "All Mirag Academy data has been created successfully in English!\n";
     }
 }

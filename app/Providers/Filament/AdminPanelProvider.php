@@ -31,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->profile()
-            ->brandName('I Quran')
+            ->brandName('Mirag Academy')
             ->colors([
                 'primary' => Color::Amber,
             ])

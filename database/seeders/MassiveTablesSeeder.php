@@ -83,7 +83,7 @@ class MassiveTablesSeeder extends Seeder
           $admin = User::updateOrCreate(
             ['email' => 'admin@example.com'],
             [
-                'name' => 'I Quran Admin',
+                'name' => 'Mirag Academy Admin',
                 'password' => Hash::make('12345678'),
             ]
         );
