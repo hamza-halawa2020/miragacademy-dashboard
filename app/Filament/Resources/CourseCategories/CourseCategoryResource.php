@@ -13,7 +13,7 @@ use Filament\Actions\ViewAction;
 use Filament\Notifications\Notification;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Toggle;
 use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\ImageEntry;
@@ -53,9 +53,8 @@ class CourseCategoryResource extends Resource
                     ->required()
                     ->unique(ignoreRecord: true)
                     ->maxLength(255),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->label(__('Description'))
-                    ->rows(4)
                     ->columnSpanFull(),
                 FileUpload::make('image')
                     ->label(__('Image'))
@@ -75,6 +74,8 @@ class CourseCategoryResource extends Resource
                     ->label(__('Name')),
                 TextEntry::make('description')
                     ->label(__('Description'))
+                    ->html()
+                    ->columnSpanFull()
                     ->placeholder('-'),
                 ImageEntry::make('image')
                     ->label(__('Image')),
