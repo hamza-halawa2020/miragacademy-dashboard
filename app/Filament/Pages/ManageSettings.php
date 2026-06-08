@@ -89,8 +89,8 @@ class ManageSettings extends Page
                         Textarea::make('about_us_footer')
                             ->label('About Us (Footer)')
                             ->rows(3),
-                        TextInput::make('address')
-                            ->label('Address'),
+                        // TextInput::make('address')
+                        //     ->label('Address'),
                     ]),
 
                 Section::make('Policies')
