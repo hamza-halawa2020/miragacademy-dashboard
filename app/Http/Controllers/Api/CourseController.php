@@ -23,7 +23,7 @@ class CourseController extends ApiController
         $categories = CourseCategory::query()
             ->active()
             ->withCount('courses')
-            ->orderBy('name')
+            ->orderBy('created_at')
             ->get()
             ->map(fn (CourseCategory $category) => [
                 'id' => $category->id,
