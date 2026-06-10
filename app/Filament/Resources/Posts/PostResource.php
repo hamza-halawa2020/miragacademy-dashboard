@@ -39,13 +39,6 @@ class PostResource extends Resource
         return __('Post');
     }
 
-    
-    public static function canAccess(): bool
-{
-    return false;
-}
-
-
     public static function getPluralModelLabel(): string
     {
         return __('Posts');
@@ -59,10 +52,21 @@ class PostResource extends Resource
                 TextInput::make('title')
                     ->label(__('Title'))
                     ->required(),
+                TextInput::make('slug')
+                    ->label(__('Slug'))
+                    ->disabled()
+                    ->dehydrated(false),
                 RichEditor::make('description')
                     ->label(__('Description'))
                     ->required()
                     ->columnSpanFull(),
+                TextInput::make('meta_title')
+                    ->label(__('Meta Title'))
+                    ->maxLength(255),
+                Textarea::make('meta_description')
+                    ->label(__('Meta Description'))
+                    ->maxLength(500)
+                    ->rows(3),
                 FileUpload::make('image')
                     ->label(__('Image'))
                     ->image()
@@ -79,10 +83,16 @@ class PostResource extends Resource
             ->components([
                 TextEntry::make('title')
                     ->label(__('Title')),
+                TextEntry::make('slug')
+                    ->label(__('Slug')),
                 TextEntry::make('description')
                     ->label(__('Description'))
                     ->html()
                     ->columnSpanFull(),
+                TextEntry::make('meta_title')
+                    ->label(__('Meta Title')),
+                TextEntry::make('meta_description')
+                    ->label(__('Meta Description')),
                 ImageEntry::make('image')
                     ->label(__('Image')),
                 IconEntry::make('status')
@@ -107,6 +117,14 @@ class PostResource extends Resource
                 TextColumn::make('title')
                     ->label(__('Title'))
                     ->searchable(),
+                TextColumn::make('meta_title')
+                    ->label(__('Meta Title'))
+                    ->searchable()
+                    ->toggleable(),
+                TextColumn::make('slug')
+                    ->label(__('Slug'))
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('description')
                     ->label(__('Description'))
                     ->html()

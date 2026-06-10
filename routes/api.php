@@ -16,7 +16,7 @@ use App\Http\Controllers\Api\PricingPlanController;
 Route::get('/settings', [SettingController::class, 'index']);
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/{id}', [PostController::class, 'show']);
+Route::get('/posts/{slug}', [PostController::class, 'show']);
 
 Route::get('/courses', [CourseController::class, 'index']);
 Route::get('/course-categories', [CourseController::class, 'categories']);

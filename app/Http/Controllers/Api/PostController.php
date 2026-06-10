@@ -12,4 +12,14 @@ class PostController extends ApiController
         $this->model = Post::class;
         $this->resource = PostResource::class;
     }
+
+    public function show($slug)
+    {
+        $post = Post::with($this->with)
+            ->active()
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        return new PostResource($post);
+    }
 }

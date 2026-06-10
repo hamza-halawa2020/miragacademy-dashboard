@@ -12,9 +12,12 @@ class PostResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'slug' => $this->slug,
             'description' => $this->description,
             'image_url' => $this->image ? asset('storage/' . $this->image) : null,
             'status' => $this->status,
+            'meta_title' => $this->meta_title,
+            'meta_description' => $this->meta_description,
         ];
     }
 }
