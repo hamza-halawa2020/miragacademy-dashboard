@@ -37,9 +37,9 @@ class MediaCenterResource extends Resource
     }
 
     public static function canAccess(): bool
-{
-    return false;
-}
+    {
+        return true;
+    }
 
     public static function getPluralModelLabel(): string
     {
