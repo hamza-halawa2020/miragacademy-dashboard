@@ -9,9 +9,23 @@ COPY public ./public
 RUN npm install && npm run build
 
 
-FROM composer:2 AS vendor
+FROM composer:2 AS composer_binary
+
+
+FROM php:8.4-cli-bookworm AS vendor
 
 WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        git \
+        libicu-dev \
+        libzip-dev \
+        unzip \
+    && docker-php-ext-install -j"$(nproc)" intl zip \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer_binary /usr/bin/composer /usr/bin/composer
 
 COPY composer.json composer.lock ./
 
