@@ -55,7 +55,6 @@ RUN apt-get update \
         libjpeg62-turbo-dev \
         libpng-dev \
         libpq-dev \
-        libsqlite3-dev \
         libwebp-dev \
         libzip-dev \
         unzip \
@@ -68,8 +67,6 @@ RUN apt-get update \
         pcntl \
         pdo_mysql \
         pdo_pgsql \
-        pdo_sqlite \
-        sqlite3 \
         zip \
     && pecl install redis \
     && docker-php-ext-enable redis \
