@@ -46,9 +46,12 @@ class ManageSettings extends Page
                         TextInput::make('whatsapp')
                             ->label('WhatsApp')
                             ->tel(),
-                        // TextInput::make('facebook')
-                        //     ->label('Facebook')
-                        //     ->url(),
+                        TextInput::make('facebook')
+                            ->label('Facebook')
+                            ->url(),
+                        TextInput::make('youtube')
+                            ->label('youtube')
+                            ->url(),
                         TextInput::make('instagram')
                             ->label('Instagram')
                             ->url(),

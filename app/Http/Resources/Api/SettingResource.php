@@ -12,10 +12,11 @@ class SettingResource extends JsonResource
         return [
             'phone' => $this->phone,
             'whatsapp' => $this->whatsapp,
-            // 'facebook' => $this->facebook,
+            'facebook' => $this->facebook,
+            'youtube' => $this->youtube,
             'instagram' => $this->instagram,
             'email' => $this->email,
-            'address' => $this->address,
+            // 'address' => $this->address,
             'about_us' => $this->about_us,
             'about_us_footer' => $this->about_us_footer,
             'privacy_policy' => $this->privacy_policy,
