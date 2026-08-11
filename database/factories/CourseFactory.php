@@ -9,10 +9,10 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(4),
-            'description' => fake()->paragraphs(2, true),
-            'image' => 'courses/' . fake()->slug() . '.jpg',
-            'status' => fake()->boolean(80),
+            'title' => $this->faker->sentence(4),
+            'description' => $this->faker->paragraphs(2, true),
+            'image' => 'courses/' . $this->faker->slug() . '.jpg',
+            'status' => $this->faker->boolean(80),
         ];
     }
 }

@@ -9,11 +9,11 @@ class MainSliderFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(5),
-            'description' => fake()->sentence(12),
-            'link' => '/' . fake()->slug(),
-            'image' => 'sliders/' . fake()->slug() . '.jpg',
-            'status' => fake()->boolean(80),
+            'title' => $this->faker->sentence(5),
+            'description' => $this->faker->sentence(12),
+            'link' => '/' . $this->faker->slug(),
+            'image' => 'sliders/' . $this->faker->slug() . '.jpg',
+            'status' => $this->faker->boolean(80),
         ];
     }
 }

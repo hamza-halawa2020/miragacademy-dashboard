@@ -9,8 +9,8 @@ class SettingFactory extends Factory
     public function definition(): array
     {
         return [
-            'key' => fake()->unique()->bothify('setting_####??'),
-            'value' => fake()->paragraph(),
+            'key' => $this->faker->unique()->bothify('setting_####??'),
+            'value' => $this->faker->paragraph(),
         ];
     }
 }

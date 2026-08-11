@@ -9,9 +9,9 @@ class CertificateFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(4),
-            'file' => 'certificates/' . fake()->slug() . '.pdf',
-            'status' => fake()->boolean(85),
+            'title' => $this->faker->sentence(4),
+            'file' => 'certificates/' . $this->faker->slug() . '.pdf',
+            'status' => $this->faker->boolean(85),
         ];
     }
 }

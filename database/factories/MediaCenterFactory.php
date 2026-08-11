@@ -8,14 +8,14 @@ class MediaCenterFactory extends Factory
 {
     public function definition(): array
     {
-        $type = fake()->randomElement(['image', 'video']);
+        $type = $this->faker->randomElement(['image', 'video']);
 
         return [
-            'title' => fake()->sentence(5),
+            'title' => $this->faker->sentence(5),
             'type' => $type,
-            'file' => $type === 'image' ? 'media/' . fake()->slug() . '.jpg' : null,
-            'video_url' => $type === 'video' ? fake()->url() : null,
-            'status' => fake()->boolean(80),
+            'file' => $type === 'image' ? 'media/' . $this->faker->slug() . '.jpg' : null,
+            'video_url' => $type === 'video' ? $this->faker->url() : null,
+            'status' => $this->faker->boolean(80),
         ];
     }
 }

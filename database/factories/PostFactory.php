@@ -9,10 +9,10 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(6),
-            'description' => fake()->paragraphs(3, true),
-            'image' => 'posts/' . fake()->slug() . '.jpg',
-            'status' => fake()->boolean(75),
+            'title' => $this->faker->sentence(6),
+            'description' => $this->faker->paragraphs(3, true),
+            'image' => 'posts/' . $this->faker->slug() . '.jpg',
+            'status' => $this->faker->boolean(75),
         ];
     }
 }

@@ -9,10 +9,10 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'country' => fake()->country(),
-            'review' => fake()->paragraph(),
-            'status' => fake()->boolean(80),
+            'name' => $this->faker->name(),
+            'country' => $this->faker->country(),
+            'review' => $this->faker->paragraph(),
+            'status' => $this->faker->boolean(80),
         ];
     }
 }

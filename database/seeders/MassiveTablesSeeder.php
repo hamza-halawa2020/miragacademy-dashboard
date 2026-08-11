@@ -17,12 +17,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
+use Faker\Factory as FakerFactory;
 
 class MassiveTablesSeeder extends Seeder
 {
     public function run(): void
     {
         $count = 3;
+        $faker = FakerFactory::create();
         $utcNow = Carbon::now('UTC');
         $now = $utcNow->format('Y-m-d H:i:s');
         DB::statement("SET time_zone = '+00:00'");
@@ -55,29 +57,29 @@ class MassiveTablesSeeder extends Seeder
         Setting::factory()->count($count)->create();
 
         Course::factory()->count($count)->create([
-            'created_by' => fn () => fake()->randomElement($userIds),
+            'created_by' => fn () => $faker->randomElement($userIds),
         ]);
 
         Post::factory()->count($count)->create([
-            'created_by' => fn () => fake()->randomElement($userIds),
+            'created_by' => fn () => $faker->randomElement($userIds),
         ]);
 
         MainSlider::factory()->count($count)->create([
-            'created_by' => fn () => fake()->randomElement($userIds),
+            'created_by' => fn () => $faker->randomElement($userIds),
         ]);
 
         Review::factory()->count($count)->create([
-            'approved_by' => fn () => fake()->randomElement($userIds),
+            'approved_by' => fn () => $faker->randomElement($userIds),
         ]);
 
         MediaCenter::factory()->count($count)->create([
-            'created_by' => fn () => fake()->randomElement($userIds),
+            'created_by' => fn () => $faker->randomElement($userIds),
         ]);
 
         Contact::factory()->count($count)->create();
 
         Certificate::factory()->count($count)->create([
-            'created_by' => fn () => fake()->randomElement($userIds),
+            'created_by' => fn () => $faker->randomElement($userIds),
         ]);
 
           $admin = User::updateOrCreate(
@@ -91,12 +93,12 @@ class MassiveTablesSeeder extends Seeder
         DB::table('personal_access_tokens')->insert(
             collect(range(1, $count))->map(fn () => [
                 'tokenable_type' => User::class,
-                'tokenable_id' => fake()->randomElement($userIds),
-                'name' => fake()->word(),
+                'tokenable_id' => $faker->randomElement($userIds),
+                'name' => $faker->word(),
                 'token' => hash('sha256', Str::uuid()->toString() . Str::random(40)),
                 'abilities' => json_encode(['*']),
-                'last_used_at' => fake()->dateTimeBetween('-3 months', 'now', 'UTC')->format('Y-m-d H:i:s'),
-                'expires_at' => fake()->dateTimeBetween('now', '+6 months', 'UTC')->format('Y-m-d H:i:s'),
+                'last_used_at' => $faker->dateTimeBetween('-3 months', 'now', 'UTC')->format('Y-m-d H:i:s'),
+                'expires_at' => $faker->dateTimeBetween('now', '+6 months', 'UTC')->format('Y-m-d H:i:s'),
                 'created_at' => $now,
                 'updated_at' => $now,
             ])->all()
@@ -113,18 +115,18 @@ class MassiveTablesSeeder extends Seeder
         DB::table('sessions')->insert(
             collect(range(1, $count))->map(fn () => [
                 'id' => Str::random(40),
-                'user_id' => fake()->randomElement($userIds),
-                'ip_address' => fake()->ipv4(),
-                'user_agent' => fake()->userAgent(),
+                'user_id' => $faker->randomElement($userIds),
+                'ip_address' => $faker->ipv4(),
+                'user_agent' => $faker->userAgent(),
                 'payload' => base64_encode(json_encode(['demo' => true])),
-                'last_activity' => $utcNow->timestamp - fake()->numberBetween(0, 86400),
+                'last_activity' => $utcNow->timestamp - $faker->numberBetween(0, 86400),
             ])->all()
         );
 
         DB::table('cache')->insert(
             collect(range(1, $count))->map(fn ($i) => [
                 'key' => "cache_key_{$i}",
-                'value' => serialize(fake()->sentence()),
+                'value' => serialize($faker->sentence()),
                 'expiration' => $utcNow->copy()->addDays(7)->timestamp,
             ])->all()
         );
@@ -139,9 +141,9 @@ class MassiveTablesSeeder extends Seeder
 
         DB::table('jobs')->insert(
             collect(range(1, $count))->map(fn () => [
-                'queue' => fake()->randomElement(['default', 'emails', 'notifications']),
+                'queue' => $faker->randomElement(['default', 'emails', 'notifications']),
                 'payload' => json_encode(['displayName' => 'DemoJob', 'job' => 'Illuminate\\Queue\\CallQueuedHandler@call']),
-                'attempts' => fake()->numberBetween(0, 3),
+                'attempts' => $faker->numberBetween(0, 3),
                 'reserved_at' => null,
                 'available_at' => $utcNow->timestamp,
                 'created_at' => $utcNow->timestamp,
@@ -152,9 +154,9 @@ class MassiveTablesSeeder extends Seeder
             collect(range(1, $count))->map(fn ($i) => [
                 'id' => (string) Str::uuid(),
                 'name' => "batch_{$i}",
-                'total_jobs' => fake()->numberBetween(1, 200),
-                'pending_jobs' => fake()->numberBetween(0, 50),
-                'failed_jobs' => fake()->numberBetween(0, 10),
+                'total_jobs' => $faker->numberBetween(1, 200),
+                'pending_jobs' => $faker->numberBetween(0, 50),
+                'failed_jobs' => $faker->numberBetween(0, 10),
                 'failed_job_ids' => json_encode([]),
                 'options' => json_encode([]),
                 'cancelled_at' => null,
@@ -167,7 +169,7 @@ class MassiveTablesSeeder extends Seeder
             collect(range(1, $count))->map(fn () => [
                 'uuid' => (string) Str::uuid(),
                 'connection' => 'database',
-                'queue' => fake()->randomElement(['default', 'emails', 'notifications']),
+                'queue' => $faker->randomElement(['default', 'emails', 'notifications']),
                 'payload' => json_encode(['displayName' => 'FailedDemoJob']),
                 'exception' => 'Demo exception for seeding.',
                 'failed_at' => $now,

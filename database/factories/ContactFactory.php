@@ -9,19 +9,19 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'phone' => fake()->phoneNumber(),
-            'email' => fake()->safeEmail(),
-            'age' => fake()->numberBetween(7, 70),
-            'country' => fake()->country(),
-            'course' => fake()->randomElement([
+            'name' => $this->faker->name(),
+            'phone' => $this->faker->phoneNumber(),
+            'email' => $this->faker->safeEmail(),
+            'age' => $this->faker->numberBetween(7, 70),
+            'country' => $this->faker->country(),
+            'course' => $this->faker->randomElement([
                 'Noor Al-Bayan',
                 'Quran Memorization',
                 'Tajweed',
                 'Arabic',
                 'Islamic Studies',
             ]),
-            'message' => fake()->paragraph(),
+            'message' => $this->faker->paragraph(),
         ];
     }
 }
