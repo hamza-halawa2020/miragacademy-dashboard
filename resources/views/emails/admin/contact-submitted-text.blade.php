@@ -5,7 +5,7 @@ You received a new message from the contact form on {{ config('app.name') }}.
 CONTACT DETAILS
 ---------------
 Sender Name: {{ $contact->name }}
-Phone: {{ $contact->phone }}
+Whats App: {{ $contact->phone }}
 Email: {{ $contact->email }}
 Age: {{ $contact->age }}
 Country: {{ $contact->country }}

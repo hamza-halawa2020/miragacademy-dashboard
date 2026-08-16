@@ -25,7 +25,7 @@
 
                             <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:separate; border-spacing:0; margin-bottom:18px; font-size:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden;">
                                 <tr><td style="padding:10px 12px; color:#6b7280; width:170px; border-bottom:1px solid #e2e8f0;">Sender Name</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;"><strong>{{ $contact->name }}</strong></td></tr>
-                                <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Phone</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->phone }}</td></tr>
+                                <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Whats App</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->phone }}</td></tr>
                                 <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Email</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->email }}</td></tr>
                                 <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Age</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->age }}</td></tr>
                                 <tr><td style="padding:10px 12px; color:#6b7280; border-bottom:1px solid #e2e8f0;">Country</td><td style="padding:10px 12px; border-bottom:1px solid #e2e8f0;">{{ $contact->country }}</td></tr>
